@@ -48,6 +48,7 @@ namespace Week_5_Assign
 
             string file = "../../Files/Tickets.csv";
             StreamWriter rd1 = new StreamWriter(file, append: true);
+            Console.Clear();
             Console.WriteLine("Please Enter A New Ticket Number");
             ticketID = Console.ReadLine();
             Console.Clear();

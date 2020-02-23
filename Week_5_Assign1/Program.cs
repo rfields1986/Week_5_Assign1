@@ -51,7 +51,7 @@ namespace Week_5_Assign
                         {
                             exit = 1;
                             int input2 = 0;
-                            Console.Write("What Type Of Ticket? \n1.Bug/Defect, 2.Enhancement, 3.Task, 4.All\n\nEnter ----> ");
+                            Console.Write("What Type Of Ticket? \n1.Bug/Defect, 2.Enhancement, 3.Task\n\nEnter ----> ");
                             Int32.TryParse(Console.ReadLine(), out input2);
                             if (input2 == 1)
                                 ticketBorD.CreateNewTicket();
