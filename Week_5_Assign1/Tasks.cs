@@ -21,13 +21,14 @@ namespace Week_5_Assign
             {
                 Console.Clear();
                 Console.WriteLine("Task Ticket File\n");
-                Console.WriteLine("No Tickets In This File");
-                Console.ReadKey();
+                Console.WriteLine("No Tickets In This File\n");
+                
             }
-
+            Console.Clear();
+            Console.WriteLine("Task Ticket File\n");
             while (!rd.EndOfStream)
             {
-                Console.WriteLine("Task Ticket File\n");
+                
                 string line1 = rd.ReadLine();
                 string[] body = line1.Split(',');
                 for (int i = 0; i < body.Length; i++)
@@ -48,7 +49,7 @@ namespace Week_5_Assign
         }
         public void CreateNewTicket()
         {
-
+            Console.Clear();
             Console.WriteLine("Please Enter A New Ticket Number");
             ticketID = Console.ReadLine();
             Console.Clear();

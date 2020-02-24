@@ -23,13 +23,14 @@ namespace Week_5_Assign
             {
                 Console.Clear();
                 Console.WriteLine("Enhancement Ticket File\n");
-                Console.WriteLine("No Tickets In This File");
-                Console.ReadKey();
+                Console.WriteLine("No Tickets In This File\n");
+                
             }
-
+            Console.Clear();
+            Console.WriteLine("Enhancement Ticket File\n");
             while (!rd.EndOfStream)
             {
-                Console.WriteLine("Enhancement Ticket File\n");
+                
                 string line1 = rd.ReadLine();
                 string[] body = line1.Split(',');
                 for (int i = 0; i < body.Length; i++)

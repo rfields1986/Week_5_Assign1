@@ -91,8 +91,8 @@ namespace Week_5_Assign
                     {
                         Console.Clear();
                         Console.WriteLine("Bug/Defect Ticket File\n");
-                        Console.WriteLine("No Tickets In This File");
-                        Console.ReadKey();
+                        Console.WriteLine("No Tickets In This File\n");
+                        
                     }
                     else
                     {
@@ -133,8 +133,8 @@ namespace Week_5_Assign
                     {
                         Console.Clear();
                         Console.WriteLine("Enhancement Ticket File\n");
-                        Console.WriteLine("No Tickets In This File");
-                        Console.ReadKey();
+                        Console.WriteLine("No Tickets In This File\n");
+                        
                     }
                     else
                     {
@@ -177,8 +177,8 @@ namespace Week_5_Assign
                     {
                         Console.Clear();
                         Console.WriteLine("Task Ticket File\n");
-                        Console.WriteLine("No Tickets In This File");
-                        Console.ReadKey();
+                        Console.WriteLine("No Tickets In This File\n");
+                        
                     }
                     else
                     {
