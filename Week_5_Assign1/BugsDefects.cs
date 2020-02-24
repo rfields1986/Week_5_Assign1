@@ -20,26 +20,29 @@ namespace Week_5_Assign
                 Console.Clear();
                 Console.WriteLine("Bug/Defect Ticket File\n");
                 Console.WriteLine("No Tickets In This File\n");
-                
+
             }
-            Console.Clear();
-            Console.WriteLine("Bug/Defect Ticket File\n");
-            while (!rd.EndOfStream)
+            else
             {
-                
-                string line1 = rd.ReadLine();
-                string[] body = line1.Split(',');
-                for (int i = 0; i < body.Length; i++)
+                Console.Clear();
+                Console.WriteLine("Bug/Defect Ticket File\n");
+                while (!rd.EndOfStream)
                 {
-                    Console.Write("{0,-20}", header[i]);
-                    Console.WriteLine(body[i]);
+
+                    string line1 = rd.ReadLine();
+                    string[] body = line1.Split(',');
+                    for (int i = 0; i < body.Length; i++)
+                    {
+                        Console.Write("{0,-20}", header[i]);
+                        Console.WriteLine(body[i]);
+
+                    }
+                    Console.WriteLine("\n");
+
+
+
 
                 }
-                Console.WriteLine("\n");
-
-
-
-
             }
             Console.WriteLine("Press Enter To Return To The Main Menu");
             Console.ReadKey();
