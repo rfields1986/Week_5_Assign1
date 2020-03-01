@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Week_5_Assign1.Models;
 
 namespace Week_5_Assign
 {
@@ -11,7 +12,7 @@ namespace Week_5_Assign
             BugsDefects ticketBorD = new BugsDefects();
             Enhancements ticketEnhan = new Enhancements();
             Tasks ticketTask = new Tasks();
-            Ticket ticketAll = new Ticket();
+            Tasks ticketAll = new Tasks();
 
 
 

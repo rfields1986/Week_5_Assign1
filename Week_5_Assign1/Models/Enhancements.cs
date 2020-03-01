@@ -53,30 +53,7 @@ namespace Week_5_Assign1.Models
         }
         public override void CreateNewTicket()
         {
-
-            string file = "../../Files/Enhancements.csv";
-            StreamWriter rd1 = new StreamWriter(file, append: true);
-            Console.WriteLine("Please Enter A New Ticket Number");
-            ticketID = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Please enter a summary of the issue?");
-            ticketSummary = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("What the status of this ticket?");
-            ticketStatus = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Please enter a priority: High, Medium, or Low?");
-            ticketPriority = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("What is your name?");
-            submitedBy = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Who is the ticket assigned too?");
-            assignedTo = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Who will be watching this ticket? Seperate multiple watchers with \"|\"");
-            watchedBy = Console.ReadLine();
-            Console.Clear();
+            base.CreateNewTicket();
             Console.WriteLine("What software is this enhancement related to?");
             software = Console.ReadLine();
             Console.Clear();
@@ -92,6 +69,8 @@ namespace Week_5_Assign1.Models
             Console.WriteLine("What is the estimated cost of the enhancement?");
             Double.TryParse(Console.ReadLine(), out estimateTemp);
             estimate = estimateTemp;
+            string file = "../../Files/Enhancements.csv";
+            StreamWriter rd1 = new StreamWriter(file, append: true);
             rd1.WriteLine($"{ticketID},{ticketSummary},{ticketStatus},{ticketPriority},{submitedBy},{assignedTo},{watchedBy},{software},{cost},{reason},{estimate}");
             rd1.Close();
             Console.WriteLine("Press Enter To Return To The Main Menu");

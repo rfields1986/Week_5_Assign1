@@ -218,8 +218,6 @@ namespace Week_5_Assign1.Models
         public virtual void CreateNewTicket()
         {
 
-            string file = "../../Files/Tickets.csv";
-            StreamWriter rd1 = new StreamWriter(file, append: true);
             Console.Clear();
             Console.WriteLine("Please Enter A New Ticket Number");
             ticketID = Console.ReadLine();
@@ -242,10 +240,6 @@ namespace Week_5_Assign1.Models
             Console.WriteLine("Who will be watching this ticket? Seperate multiple watchers with \"|\"");
             watchedBy = Console.ReadLine();
             Console.Clear();
-            rd1.WriteLine($"{ticketID},{ticketSummary},{ticketStatus},{ticketPriority},{submitedBy},{assignedTo},{watchedBy}");
-            rd1.Close();
-            Console.WriteLine("Press Enter To Return To The Main Menu");
-            Console.ReadKey();
 
         }
 
