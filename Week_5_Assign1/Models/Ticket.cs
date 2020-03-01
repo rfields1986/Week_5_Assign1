@@ -6,7 +6,7 @@ namespace Week_5_Assign1.Models
 {
     public abstract class Ticket
     {
-        public string ticketID { get; set; }
+        public int ticketID { get; set; }
         public string ticketSummary { get; set; }
         public string ticketStatus { get; set; }
         public string ticketPriority { get; set; }
@@ -19,7 +19,7 @@ namespace Week_5_Assign1.Models
 
 
 
-            ticketID = "";
+            ticketID = 0;
             ticketSummary = "";
             ticketStatus = "";
             ticketPriority = "";
@@ -28,49 +28,55 @@ namespace Week_5_Assign1.Models
             watchedBy = "";
 
         }
-        public int IDCount()
+        public virtual int IDCount()
         {
-            string file0 = "../../Files/Tickets.csv";
-            string file1 = "../../Files/Enhancements.csv";
-            string file2 = "../../Files/Tasks.csv";
-
             List<string> idCount = new List<string>();
-
-            StreamReader enhanceID = new StreamReader(file0);
-            StreamReader taskID = new StreamReader(file1);
-            StreamReader bugID = new StreamReader(file2);
-            while (!enhanceID.EndOfStream & !taskID.EndOfStream & !bugID.EndOfStream)
+            StreamReader enhanceID = new StreamReader("../../Files/Tickets.csv");
+            StreamReader taskID = new StreamReader("../../Files/Enhancements.csv");
+            StreamReader bugID = new StreamReader("../../Files/Tasks.csv");
+            do
             {
-                if (!enhanceID.EndOfStream)
+                while (!enhanceID.EndOfStream)
                 {
                     string readoutHeader = enhanceID.ReadLine();
-                    string line = enhanceID.ReadLine();
-                    string[] lineSplit = line.Split(',');
-                    idCount.Add(lineSplit[0]);
-                }
-                else if (!taskID.EndOfStream)
-                {
-                    string readoutHeader = taskID.ReadLine();
-                    string line = taskID.ReadLine();
-                    string[] lineSplit = line.Split(',');
-                    idCount.Add(lineSplit[0]);
-                }
-                else if (!bugID.EndOfStream)
-                {
-                    string readoutHeader = bugID.ReadLine();
-                    string line = bugID.ReadLine();
-                    string[] lineSplit = line.Split(',');
-                    idCount.Add(lineSplit[0]);
-                }
-                else
-                {
-                    enhanceID.Close();
-                    taskID.Close();
-                    bugID.Close();
+                    if (!enhanceID.EndOfStream)
+                    {
+                        string line = enhanceID.ReadLine();
+                        string[] lineSplit = line.Split(',');
+                        idCount.Add(lineSplit[0]);
+                    }
+
                 }
 
+                while (!taskID.EndOfStream)
+                {
+                    string readoutHeader = taskID.ReadLine();
+                    if (!taskID.EndOfStream)
+                    {
+                        string line = taskID.ReadLine();
+                        string[] lineSplit = line.Split(',');
+                        idCount.Add(lineSplit[0]);
+                    }
+                }
+
+                while (!bugID.EndOfStream)
+                {
+                    string readoutHeader = bugID.ReadLine();
+                    if (!bugID.EndOfStream)
+                    {
+                        string line = bugID.ReadLine();
+                        string[] lineSplit = line.Split(',');
+                        idCount.Add(lineSplit[0]);
+                    }
+                }
+
+            } while (!enhanceID.EndOfStream & !taskID.EndOfStream & !bugID.EndOfStream);
+            {
+                enhanceID.Close();
+                taskID.Close();
+                bugID.Close();
+                return idCount.Count + 1;
             }
-            return idCount.Count + 1;
 
 
 
@@ -218,9 +224,6 @@ namespace Week_5_Assign1.Models
         public virtual void CreateNewTicket()
         {
 
-            Console.Clear();
-            Console.WriteLine("Please Enter A New Ticket Number");
-            ticketID = Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Please enter a summary of the issue?");
             ticketSummary = Console.ReadLine();

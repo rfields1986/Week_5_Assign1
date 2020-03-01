@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Week_5_Assign1.Models
 {
@@ -51,6 +52,8 @@ namespace Week_5_Assign1.Models
         }
         public override void CreateNewTicket()
         {
+            Console.WriteLine($"The New Ticket Number Is --> {IDCount()}");
+            ticketID = IDCount();
             base.CreateNewTicket();
             Console.WriteLine("What is the project name?");
             projectName = Console.ReadLine();
@@ -65,5 +68,7 @@ namespace Week_5_Assign1.Models
             Console.ReadKey();
 
         }
+
+
     }
 }

@@ -49,6 +49,8 @@ namespace Week_5_Assign1.Models
         }
         public override void CreateNewTicket()
         {
+            Console.WriteLine($"The New Ticket Number Is --> {IDCount()}");
+            ticketID = IDCount();
             base.CreateNewTicket();
             Console.WriteLine("What is the severity of the Bug/Defect?");
             severity = Console.ReadLine();

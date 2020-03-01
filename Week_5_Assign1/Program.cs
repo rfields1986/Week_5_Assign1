@@ -60,6 +60,11 @@ namespace Week_5_Assign
                                 ticketEnhan.CreateNewTicket();
                             else if (input2 == 3)
                                 ticketTask.CreateNewTicket();
+                            else
+                            {
+                                Console.WriteLine("Wrong Input Try Again");
+                                Console.ReadKey();
+                            }
 
 
 
