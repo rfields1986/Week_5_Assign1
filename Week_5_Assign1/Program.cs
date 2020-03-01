@@ -18,7 +18,7 @@ namespace Week_5_Assign
 
             do
             {
-                //ask for choice
+                
                 Console.Clear();
                 Console.Write("1. Read The File.\n2. Write a new ticket to file.\n3. Exit\n\nEnter ----> ");
                 Int32.TryParse(Console.ReadLine(), out input);

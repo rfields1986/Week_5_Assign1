@@ -80,7 +80,7 @@ namespace Week_5_Assign1.Models
 
 
 
-        }//still working on the code not called in the program
+        }
         public void ReadAllTickets()
         {
             int drop = 0;
