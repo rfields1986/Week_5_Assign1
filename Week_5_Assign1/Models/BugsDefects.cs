@@ -50,8 +50,7 @@ namespace Week_5_Assign1.Models
         public override void CreateNewTicket()
         {
             Console.Clear();
-            Console.WriteLine($"The New Ticket Number Is --> {IDCount()}\n\nPress Any Key");
-            ticketID = IDCount();
+            Console.WriteLine($"The New Ticket Number Is --> {ticketID = IDCount()}\n\nPress Any Key");
             Console.ReadKey();
             base.CreateNewTicket();
             Console.WriteLine("What is the severity of the Bug/Defect?");
@@ -62,6 +61,7 @@ namespace Week_5_Assign1.Models
             rd1.Close();
             Console.WriteLine("Press Enter To Return To The Main Menu");
             Console.ReadKey();
+
 
         }
     }
