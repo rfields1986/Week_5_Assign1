@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Pipes;
-using System.Linq;
 
 namespace Week_5_Assign1.Models
 {
@@ -32,55 +30,43 @@ namespace Week_5_Assign1.Models
         }
         public virtual int IDCount()
         {
-            List<int> idCount = new List<int>();
-            if (idCount.Count == 0)
-            {
-                idCount.Add(0);
-            }
-
+            List<string> idCount = new List<string>();
             StreamReader enhanceID = new StreamReader("../../Files/Tickets.csv");
             StreamReader taskID = new StreamReader("../../Files/Enhancements.csv");
             StreamReader bugID = new StreamReader("../../Files/Tasks.csv");
             do
             {
-
                 while (!enhanceID.EndOfStream)
                 {
-                    enhanceID.DiscardBufferedData();
-                    enhanceID.BaseStream.Seek(0, SeekOrigin.Begin);
-
                     string readoutHeader = enhanceID.ReadLine();
                     if (!enhanceID.EndOfStream)
                     {
                         string line = enhanceID.ReadLine();
                         string[] lineSplit = line.Split(',');
-                        idCount.Add(Int32.Parse(lineSplit[0]));
+                        idCount.Add(lineSplit[0]);
                     }
+
                 }
 
                 while (!taskID.EndOfStream)
                 {
-                    taskID.DiscardBufferedData();
-                    taskID.BaseStream.Seek(0, SeekOrigin.Begin);
                     string readoutHeader = taskID.ReadLine();
                     if (!taskID.EndOfStream)
                     {
                         string line = taskID.ReadLine();
                         string[] lineSplit = line.Split(',');
-                        idCount.Add(Int32.Parse(lineSplit[0]));
+                        idCount.Add(lineSplit[0]);
                     }
                 }
 
                 while (!bugID.EndOfStream)
                 {
-                    bugID.DiscardBufferedData();
-                    bugID.BaseStream.Seek(0, SeekOrigin.Begin);
                     string readoutHeader = bugID.ReadLine();
                     if (!bugID.EndOfStream)
                     {
                         string line = bugID.ReadLine();
                         string[] lineSplit = line.Split(',');
-                        idCount.Add(Int32.Parse(lineSplit[0]));
+                        idCount.Add(lineSplit[0]);
                     }
                 }
 
@@ -89,7 +75,7 @@ namespace Week_5_Assign1.Models
                 enhanceID.Close();
                 taskID.Close();
                 bugID.Close();
-                return idCount.Max() + 1;
+                return idCount.Count + 1;
             }
 
 
@@ -113,7 +99,7 @@ namespace Week_5_Assign1.Models
                         Console.Clear();
                         Console.WriteLine("Bug/Defect Ticket File\n");
                         Console.WriteLine("No Tickets In This File\n");
-                        
+
                     }
                     else
                     {
@@ -155,7 +141,7 @@ namespace Week_5_Assign1.Models
                         Console.Clear();
                         Console.WriteLine("Enhancement Ticket File\n");
                         Console.WriteLine("No Tickets In This File\n");
-                        
+
                     }
                     else
                     {
@@ -199,7 +185,7 @@ namespace Week_5_Assign1.Models
                         Console.Clear();
                         Console.WriteLine("Task Ticket File\n");
                         Console.WriteLine("No Tickets In This File\n");
-                        
+
                     }
                     else
                     {
